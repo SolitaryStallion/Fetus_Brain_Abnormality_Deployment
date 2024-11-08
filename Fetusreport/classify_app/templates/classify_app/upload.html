@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding for the document -->
+    <meta charset="UTF-8">
+    
+    <!-- Viewport configuration for responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to external CSS file from static directory (for custom styles) -->
+    <link rel="stylesheet" href="{% static 'new.css' %}">
+    
+    <!-- Importing the Poppins font from Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    
+    <!-- Link to Tingle.js CSS for modal (popup) functionality -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tingle.js@0.15.1/dist/tingle.min.css">
+    
+    <!-- Link to Tingle.js JavaScript for modal (popup) functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/tingle.js@0.15.1/dist/tingle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <!-- Website Title -->
+        <div class="title">EmbryoCheck</div>
+        
+        <!-- Navigation Links (social media or other pages) -->
+        <div class="nav-links">
+            <a href="https://google.com">Linkedin</a>
+            <a href="#">Github</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Left Section: Displays an image and a description -->
+        <div class="left">
+            <!-- GIF or image representing the service -->
+            <img src="https://i.pinimg.com/originals/61/b2/d3/61b2d33f39927afa72e5f57a28cc7c83.gif" alt="Uploaded Image"
+                class="uploaded-image">
+            
+            <!-- Description about the service provided -->
+            <p class="image-description">Helping detect fetal brain health early for better outcomes and peace of mind.</p>
+        </div>
+        
+        <!-- Right Section: Contains the image upload form and predicted result display -->
+        <div class="right">
+            <!-- Heading for the upload section -->
+            <h1>Upload an Image</h1>
+            
+            <div>
+                <!-- Form to upload an image with POST method and file encoding -->
+                <form method="POST" enctype="multipart/form-data">
+                    <!-- Django CSRF Token for security -->
+                    {% csrf_token %}
+                    
+                    <!-- File input for uploading image -->
+                    <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" required>
+                    
+                    <!-- Submit button for the form -->
+                    <button type="submit">Upload Image</button>
+                </form>
+            </div>
+
+            <!-- Display the predicted class of the uploaded image -->
+            {% if class %}
+            <div class="prediction-result">
+                <!-- Heading for the diagnostic result -->
+                <h2>Diagnostic Result</h2>
+                
+                <!-- Display the predicted class (output from Django view) -->
+                <p>{{ class }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+
+</html>

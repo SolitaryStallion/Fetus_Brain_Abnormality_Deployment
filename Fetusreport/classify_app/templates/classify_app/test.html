@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Template Example</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(45deg, #ff6ec7, #ff9a8b, #f7c1bb);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Gradient animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #ffd700;  /* Golden color for highlighted text */
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            padding: 12px 25px;
+            background-color: #ff6ec7;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #f7c1bb;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>{{ my_variable }}</h1>  <!-- Accessing the Django variable -->
+        
+        <p>Here's another example with a dynamic value: <span class="highlight">{{ my_variable|lower }}</span></p>  <!-- Using filters -->
+
+        <p>
+            {% if my_variable %}
+                The variable is present and it says: <span class="highlight">{{ my_variable }}</span>
+            {% else %}
+                The variable is not defined.
+            {% endif %}
+        </p>
+        
+        <button class="button">Click Me!</button>
+    </div>
+
+</body>
+</html>

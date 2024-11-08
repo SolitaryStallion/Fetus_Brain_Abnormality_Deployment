@@ -1,0 +1,198 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures consistent box-sizing behavior across elements */
+    font-family: 'Poppins'; /* Default font family */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fallback font family */
+    background-color: white; /* Set the background color of the page */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    /* color: #333; Uncomment if you want to change text color globally */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute space between title and navigation links */
+    align-items: center; /* Vertically align items */
+    width: 100%; /* Full width of the viewport */
+    padding: 10px 20px; /* Add some padding around the navbar */
+    color: black; /* Set text color */
+    position: fixed; /* Make navbar stick to the top */
+    top: 0; /* Align the navbar to the top of the page */
+    left: 0; /* Align the navbar to the left */
+    right: 0; /* Align the navbar to the right */
+    /* z-index: 1000; Uncomment if you need to make sure the navbar stays above other content */
+}
+
+.navbar .title {
+    font-size: 2rem; /* Large font size for the website title */
+}
+
+.navbar .nav-links a {
+    color: black; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Horizontal spacing between links */
+    font-size: 1.5rem; /* Medium font size for links */
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline; /* Underline links when hovered */
+}
+
+/* Container with two sections */
+.container {
+    position: fixed; /* Fixed positioning to keep the container in place */
+    bottom: 0; /* Align the container to the bottom of the page */
+    display: flex; /* Flexbox layout for two sections (left and right) */
+    justify-content: space-between; /* Space out the left and right sections */
+    align-items: center; /* Vertically align the content */
+    width: 100%; /* Full width of the viewport */
+    height: 90vh; /* Set the container height to 90% of the viewport */
+    margin: 0px; /* Remove any default margin */
+    padding-right: 50px; /* Add padding to the right */
+    gap: 30px; /* Adds space between left and right sections */
+}
+
+/* Left section (Upload Form) */
+.left {
+    flex: 1; /* Allow the left section to take up 1 fraction of available space */
+    width: 450px; /* Set the width of the left section */
+    height: 500px; /* Set the height of the left section */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically inside left section */
+    justify-content: center; /* Center elements vertically */
+    /* background-color: #45a049; Uncomment if you want a background color for the left section */
+    overflow: hidden; /* Hide overflowing content */
+    align-items: center; /* Center the content horizontally */
+}
+
+.left p {
+    text-align: center; /* Center the paragraph text */
+    font-size: 1.5rem; /* Medium font size */
+    padding-left: 10px; /* Padding to the left */
+    padding-right: 10px; /* Padding to the right */
+    color: black; /* Set text color to black */
+}
+
+h1 {
+    font-size: 2rem; /* Large font size for the heading */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+/* File Input Style */
+input[type="file"] {
+    display: block; /* Make the file input block-level for easy centering */
+    margin: 20px auto; /* Center the input with a 20px top and bottom margin */
+    padding: 12px 20px; /* Padding inside the input box */
+    border: 2px solid #ddd; /* Light gray border around the input */
+    border-radius: 5px; /* Rounded corners for the input */
+    background-color: #fff; /* White background for the input */
+    color: #333; /* Dark text color inside the input */
+    font-size: 1rem; /* Standard font size for input text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    width: 100%; /* Make the input width 100% of its container */
+    max-width: 400px; /* Limit the input width to 400px */
+    white-space: nowrap; /* Prevent text inside the input from wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #4CAF50; /* Green background color for the file upload button */
+    color: white; /* White text color for the button */
+    padding: 8px 16px; /* Padding inside the button */
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Round the button corners */
+    cursor: pointer; /* Pointer cursor when hovering over the button */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #45a049; /* Darker green shade on hover */
+}
+
+/* Styling for the diagnostic result */
+.prediction-result {
+    margin-top: 50px; /* Add space above the result section */
+}
+
+/* Button Styling */
+button {
+    padding: 12px 24px; /* Padding inside the button */
+    background-color: black; /* Black background for the button */
+    color: white; /* White text color */
+    border: none; /* Remove button border */
+    border-radius: 30px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Standard font size */
+    transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Change background color on hover */
+    transform: translateY(-2px); /* Add a subtle upward motion on hover */
+}
+
+/* Section Styling */
+section {
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background-color: white; /* White background for section */
+}
+
+/* Right section (Image and Description) */
+.right {
+    flex: 1; /* Allow the right section to take up 1 fraction of available space */
+    width: 500px; /* Set the width of the right section */
+    height: 430px; /* Set the height of the right section */
+    text-align: center; /* Center text in the right section */
+    /* background-color: #45a049; Uncomment if you want a background color for the right section */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically inside right section */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center content vertically */
+    border: solid; /* Add a border around the right section */
+    border-radius: 50px; /* Round corners for the right section */
+}
+
+/* Image Style (uploaded image) */
+.uploaded-image {
+    width: 80%; /* Make the image width 80% of the container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    margin-bottom: 15px; /* Add space below the image */
+}
+
+/* Image Description Style */
+.image-description {
+    font-size: 1rem; /* Set font size for the description */
+    color: #666; /* Light gray text color */
+    margin-top: 10px; /* Add space above the description */
+}
+
+/* Result Container for Prediction Output */
+.result {
+    margin-top: 20px; /* Add space above the result container */
+    padding: 15px; /* Add padding inside the result container */
+    background-color: #f9f9f9; /* Light gray background for the result */
+    border: 1px solid #ddd; /* Light gray border around the result */
+    border-radius: 5px; /* Round corners for the result container */
+    word-wrap: break-word; /* Ensure long words break and wrap to the next line */
+}
+
+/* Styling for links inside the result */
+.result a {
+    color: #0066cc; /* Blue color for links */
+    text-decoration: none; /* Remove underline from links */
+    word-break: break-word; /* Break long words to fit the container */
+}
+
+.result a:hover {
+    text-decoration: underline; /* Underline the link on hover */
+}
